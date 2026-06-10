@@ -1,3 +1,6 @@
+-- local overrides = require "configs.overrides"
+local blink_opt = require "configs.blink"
+
 return {
   {
     "stevearc/conform.nvim",
@@ -14,6 +17,26 @@ return {
 
   { import = "nvchad.blink.lazyspec" },
 
+  -- {
+  --   "saghen/blink.pairs",
+  --   version = "*",
+  --   dependencies = "saghen/blink.download",
+  --   event = { "BufNewFile", "BufReadPost" },
+  --   opts = {
+  --     highlights = {
+  --       enabled = true,
+  --       groups = {
+  --         "BlinkPairsRed",
+  --         "BlinkPairsOrange",
+  --         "BlinkPairsYellow",
+  --         "BlinkPairsGreen",
+  --         "BlinkPairsCyan",
+  --         "BlinkPairsBlue",
+  --         "BlinkPairsViolet",
+  --       },
+  --     },
+  --   },
+  -- },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -27,4 +50,13 @@ return {
       },
     },
   },
+  ----------------------------------------- enhance plugins ------------------------------------------
+  {
+    "okuuva/auto-save.nvim",
+    event = { "InsertLeave", "TextChanged" },
+    config = function()
+      require "configs.autosave"
+    end,
+  },
+
 }
