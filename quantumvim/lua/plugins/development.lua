@@ -70,7 +70,7 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",
-        "basedpyright",
+        "pyrefly",
         "ts_ls",
         "html",
         "cssls",
@@ -80,6 +80,7 @@ return {
         "bashls",
         "marksman",
         "texlab",
+        "selene",
       },
       automatic_enable = true,
     },
