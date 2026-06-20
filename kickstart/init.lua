@@ -751,10 +751,10 @@ vim.pack.add { 'https://github.com/mfussenegger/nvim-lint' }
 local lint = require 'lint'
 lint.linters_by_ft = {
   markdown = { 'markdownlint-cli2' },
-  python = { 'ruff' }, -- ruff check; complements pyrefly's type diagnostics
-  bash = { 'shellcheck' }, -- installed via Mason
+  python = { 'ruff' },
+  bash = { 'shellcheck' },
   sh = { 'shellcheck' },
-  nix = { 'deadnix', 'statix' }, -- install system-wide (see note in Change 2)
+  nix = { 'deadnix', 'statix' },
 }
 
 -- The original config was missing this autocmd — without it, linters_by_ft does nothing.
