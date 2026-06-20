@@ -37,36 +37,16 @@ return {
 
   {
     "folke/snacks.nvim",
-    event = "VeryLazy",
+    priority = 1000,
+    lazy = false,
+    ---@type snacks.Config
+
     opts = {
-      animate = {
-        enabled = true,
-        duration = 20,
-        easing = "linear",
-        fps = 60,
-      },
-      scroll = {
-        enabled = true,
-        animate = {
-          duration = {
-            step = 15,
-            total = 250,
-          },
-          easing = "outQuad",
-        },
-        animate_repeat = {
-          delay = 100,
-          duration = { step = 5, total = 50 },
-          easing = "outQuad",
-        },
-        image = {
-          resolve = function(path, src)
-            if require("obsidian.api").path_is_note(path) then
-              return require("obsidian.api").resolve_image_path(src)
-            end
-          end,
-        },
-      },
+      image = { enabled = true },
+      notifier = { enabled = true },
+      animate = { enabled = true },
+      scroll = { enabled = true },
+      words = { enabled = true },
       lazygit = { enabled = true },
       indent = { enabled = true },
     },
@@ -81,6 +61,8 @@ return {
         "html",
         "css",
         "python",
+        "markdown",
+        "markdown_inline",
       },
     },
   },
