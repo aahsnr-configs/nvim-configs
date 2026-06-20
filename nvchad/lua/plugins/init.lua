@@ -1,22 +1,23 @@
 return {
-  {
-    "stevearc/conform.nvim",
-    event = "BufWritePre",
-    opts = require "configs.conform",
-  },
-
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require "configs.lspconfig"
-    end,
-  },
+  -- {
+  --   "stevearc/conform.nvim",
+  --   event = "BufWritePre",
+  --   opts = require "configs.conform",
+  -- },
+  --
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   config = function()
+  --     require "configs.lspconfig"
+  --   end,
+  -- },
 
   { import = "nvchad.blink.lazyspec" },
 
   {
     "saghen/blink.pairs",
-    version = "*",
+    build = function() require('blink.pairs')
+.build():pwait(60000) end 
     dependencies = "saghen/blink.download",
     event = { "BufNewFile", "BufReadPost" },
     opts = {
