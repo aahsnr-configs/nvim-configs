@@ -1,57 +1,49 @@
 return {
-  -- {
-  --   "stevearc/conform.nvim",
-  --   event = "BufWritePre",
-  --   opts = require "configs.conform",
-  -- },
-  --
-  -- {
-  --   "neovim/nvim-lspconfig",
-  --   config = function()
-  --     require "configs.lspconfig"
-  --   end,
-  -- },
-
-  { import = "nvchad.blink.lazyspec" },
+  {
+    "stevearc/conform.nvim",
+    event = "BufWritePre",
+    opts = require "configs.conform",
+  },
 
   {
-    "saghen/blink.pairs",
-    build = function() require('blink.pairs')
-.build():pwait(60000) end 
-    dependencies = "saghen/blink.download",
-    event = { "BufNewFile", "BufReadPost" },
-    opts = {
-      highlights = {
-        enabled = true,
-        groups = {
-          "BlinkPairsRed",
-          "BlinkPairsOrange",
-          "BlinkPairsYellow",
-          "BlinkPairsGreen",
-          "BlinkPairsCyan",
-          "BlinkPairsBlue",
-          "BlinkPairsViolet",
-        },
-      },
-    },
+    "neovim/nvim-lspconfig",
+    config = function()
+      require "configs.lspconfig"
+    end,
   },
+
+  { import = "nvchad.blink.lazyspec" },
 
   {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
-    ---@type snacks.Config
-
     opts = {
-      image = { enabled = true },
+      image = {
+        enabled = true,
+        doc = {
+          enabled = true, -- render images in markdown documents
+          inline = true, -- show images inline below the image tag
+          float = true, -- allow floating window preview too
+        },
+      },
       notifier = { enabled = true },
       animate = { enabled = true },
       scroll = { enabled = true },
       words = { enabled = true },
       lazygit = { enabled = true },
       indent = { enabled = true },
+      terminal = { enabled = true },
     },
   },
+
+  -- {
+  --   "nvim-neorg/neorg",
+  --   lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+  --   version = "*", -- Pin Neorg to the latest stable release
+  --   config = true,
+  -- },
+
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -64,6 +56,13 @@ return {
         "python",
         "markdown",
         "markdown_inline",
+        "javascript",
+        "latex",
+        "scss",
+        "tsx",
+        "svelte",
+        "typst",
+        "vue",
       },
     },
   },
