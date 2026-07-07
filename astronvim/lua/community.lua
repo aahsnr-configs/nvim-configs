@@ -9,9 +9,12 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.markdown" },
+  { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
   { import = "astrocommunity.pack.nix" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.prettier" },
+  { import = "astrocommunity.note-taking.neorg" },
   -- import/override with your plugins folder
 }
