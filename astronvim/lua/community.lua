@@ -15,6 +15,11 @@ return {
   { import = "astrocommunity.pack.nix" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.prettier" },
-  { import = "astrocommunity.note-taking.neorg" },
+  { import = "astrocommunity.pack.python.base" },
+  { import = "astrocommunity.pack.python.pyrefly" },
+  { import = "astrocommunity.pack.python.ruff" },
+  { import = "astrocommunity.pack.xml" },
+  { import = "astrocommunity.pack.yaml" },
+  -- { import = "astrocommunity.note-taking.neorg" },
   -- import/override with your plugins folder
 }
