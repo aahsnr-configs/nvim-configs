@@ -19,6 +19,7 @@ return {
   { import = "astrocommunity.pack.python.pyrefly" },
   { import = "astrocommunity.pack.python.ruff" },
   { import = "astrocommunity.pack.xml" },
+  { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.pack.yaml" },
   -- { import = "astrocommunity.note-taking.neorg" },
   -- import/override with your plugins folder
